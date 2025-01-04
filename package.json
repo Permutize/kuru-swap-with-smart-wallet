@@ -1,0 +1,27 @@
+{
+  "name": "kuru-swap-with-smart-wallet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node --transpile-only src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@kuru-labs/kuru-sdk": "0.0.18",
+    "@zerodev/ecdsa-validator": "5.4.0",
+    "@zerodev/sdk": "5.4.3",
+    "dotenv": "^16.4.7",
+    "ethers": "^5.7.2",
+    "permissionless": "0.2.22",
+    "tslib": "^2.8.1",
+    "viem": "^2.22.2"
+  }
+}
