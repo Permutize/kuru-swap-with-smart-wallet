@@ -141,6 +141,9 @@ async function main() {
     }
   }
 
+  const userOpFees = undefined; // await publicClient.getGasPrice();
+  const gasIncreaser = 15;
+
   const userOperation = {
     callData: await kernelClient.account.encodeCalls([
       {
@@ -149,6 +152,12 @@ async function main() {
         data,
       },
     ]),
+    maxPriorityFeePerGas: userOpFees?.maxPriorityFeePerGas
+    ? (BigInt(gasIncreaser) * userOpFees.maxPriorityFeePerGas) / BigInt(10)
+    : undefined,
+    maxFeePerGas: userOpFees?.maxFeePerGas
+    ? (BigInt(gasIncreaser) * userOpFees.maxFeePerGas) / BigInt(10)
+    : undefined,
   };
 
   const signedUserOperation = await kernelClient.signUserOperation(userOperation);
